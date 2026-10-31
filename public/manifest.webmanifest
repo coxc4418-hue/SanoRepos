@@ -1,0 +1,9 @@
+{
+  "name": "SanoRepos — Software para tu negocio",
+  "short_name": "SanoRepos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060f",
+  "theme_color": "#05060f",
+  "icons": [{ "src": "/assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

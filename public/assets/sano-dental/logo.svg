@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="sdBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset=".52" stop-color="#0284c7"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="sdTooth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="sdSmile" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <radialGradient id="sdGlow" cx=".28" cy=".18" r=".9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".32"/>
+      <stop offset=".6" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sdShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0c1f4a" flood-opacity=".38"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#sdBg)"/>
+  <rect width="512" height="512" rx="120" fill="url(#sdGlow)"/>
+  <circle cx="256" cy="262" r="196" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/>
+  <g filter="url(#sdShadow)">
+    <path fill="url(#sdTooth)" d="M256 140C228 118 172 106 146 140C116 178 128 232 148 268C163 296 167 328 175 366C183 404 196 420 213 418C232 416 234 384 240 352C244 330 248 316 256 316C264 316 268 330 272 352C278 384 280 416 299 418C316 420 329 404 337 366C345 328 349 296 364 268C384 232 396 178 366 140C340 106 284 118 256 140Z"/>
+  </g>
+  <path d="M178 160C196 146 220 148 238 160" fill="none" stroke="#bae6fd" stroke-width="14" stroke-linecap="round"/>
+  <path d="M190 232C214 262 298 262 322 232" fill="none" stroke="url(#sdSmile)" stroke-width="20" stroke-linecap="round"/>
+  <path fill="#ffffff" d="M392 92C396 112 402 118 422 122C402 126 396 132 392 152C388 132 382 126 362 122C382 118 388 112 392 92Z"/>
+  <path fill="#ffffff" fill-opacity=".8" d="M424 168C426 178 429 181 439 183C429 185 426 188 424 198C422 188 419 185 409 183C419 181 422 178 424 168Z"/>
+</svg>
