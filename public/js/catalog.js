@@ -1,6 +1,7 @@
 // SanoRepos — Catálogo de software de la línea Sano.
 // Para AGREGAR un software nuevo: copia uno de los bloques de abajo, cambia sus datos
-// y pon sus archivos en public/assets/<id>/ (logo.svg, portada.jpg y, si hay, screens/*.png).
+// pon su logo en public/assets/<id>/logo.svg (y, si hay, capturas en screens/*.png)
+// y corre `node scripts/covers.mjs` para crear su portada (cover.jpg).
 // El sitio entero (órbita, buscador, tarjetas, SanoTV, comparativa y ficha) se arma solo con esta lista.
 //
 // Campos:
@@ -9,7 +10,7 @@
 //   status     'disponible' o 'pronto' (sale como "Próximamente", sin demo ni video)
 //   color      [color principal, color secundario] — se usan en la órbita, tarjetas y ficha
 //   url        dirección del software
-//   video      video tutorial (mp4); poster = imagen de portada del video
+//   video      video tutorial (mp4); la portada (cover.jpg) la genera scripts/covers.mjs
 //   minutes    duración del video
 //   rubros     tipos de negocio que se muestran como etiquetas y alimentan el buscador
 //   keywords   palabras extra para el buscador (sin acentos no hace falta: se normalizan)
@@ -54,13 +55,13 @@ export const CATALOG = [
     category: 'Comercio',
     tagline: 'Punto de venta, inventario, caja y fiados para tiendas y bodegas.',
     description:
-      'SanoGestion es el sistema para tiendas, bodegas y abastos. Vendes con lector o búsqueda rápida, el inventario se actualiza en cada venta, llevas los fiados de tus clientes sin cuaderno y cierras la caja cuadrada. Desde el panel de administrador ves todas tus sedes en un solo lugar.',
+      'SanoGestion es el sistema para tiendas, bodegas y abastos. Vendes con lector o búsqueda rápida, el inventario se actualiza en cada venta, llevas los fiados de tus clientes sin cuaderno y cierras la caja cuadrada.',
     color: ['#10b981', '#0e7490'],
     url: 'https://sano-gestion.web.app/',
     video: 'https://sano-gestion.web.app/tutorial/sanogestion-tutorial.mp4',
     minutes: 6.4,
-    rubros: ['Bodega', 'Abasto', 'Minimarket', 'Supermercado', 'Tienda', 'Ferretería', 'Licorería'],
-    keywords: 'bodega abasto minimarket supermercado tienda comercio ferreteria licoreria charcuteria papeleria perfumeria kiosko fiados credito ventas inventario mercado verduleria frutería carniceria',
+    rubros: ['Bodega', 'Abasto', 'Minimarket', 'Supermercado', 'Tienda', 'Licorería'],
+    keywords: 'bodega abasto minimarket supermercado tienda comercio licoreria charcuteria papeleria perfumeria kiosko fiados credito ventas inventario mercado verduleria frutería carniceria',
     moneda: '$ y Bs con tasa BCV',
     screens: [],
     features: [
@@ -69,7 +70,7 @@ export const CATALOG = [
       ['book', 'Fiados', 'Créditos de clientes con abonos y saldo.'],
       ['cash', 'Caja', 'Apertura, cierre y movimientos sin descuadres.'],
       ['chart', 'Reportes', 'Ventas, utilidad y productos estrella.'],
-      ['building', 'Multisede', 'Todas tus tiendas desde un panel.']
+      ['download', 'En cualquier equipo', 'PC, tablet o teléfono, instalable como app.']
     ],
     compare: { ventas: true, inventario: true, agenda: false, whatsapp: false, qr: false, especial: 'Fiados' }
   },
@@ -181,7 +182,6 @@ export const CATALOG = [
 
 // Lo que incluyen todos los software Sano (sección "Todos incluyen")
 export const COMMON = [
-  ['building', '20 sedes + administrador', 'Cada software trae 20 sedes y un panel central para verlas todas.'],
   ['play', 'Demo gratis de 30 minutos', 'Pruébalo sin registrarte, con datos de ejemplo. PIN de la demo: 1234.'],
   ['download', 'Se instala como app', 'Desde Chrome o Edge en PC, tablet o teléfono, sin tiendas.'],
   ['cloud', '100% en la nube', 'Tus datos seguros y sincronizados en todos tus equipos.'],

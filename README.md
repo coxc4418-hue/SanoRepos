@@ -13,23 +13,25 @@ public/
   js/catalog.js         ← LISTA DE SOFTWARE (lo único que se edita para agregar uno)
   js/app.js             arma buscador, catálogo, SanoTV, comparativa y fichas
   js/cosmos.js          animación orbital del inicio
-  assets/<id>/          logo.svg, portada.jpg y screens/*.png de cada software
+  assets/<id>/          logo.svg, cover.jpg y screens/*.png de cada software
   assets/og.jpg         imagen que sale al compartir el enlace
 scripts/
   serve.mjs             ver el sitio en la PC: node scripts/serve.mjs → http://127.0.0.1:5111
   check.mjs             prueba 8 tamaños de pantalla (320 px a 1920 px)
   og.mjs                regenera assets/og.jpg
+  covers.mjs            genera assets/<id>/cover.jpg (portada de cada software)
 ```
 
 ## Agregar un software nuevo
 
-1. Crea `public/assets/<id>/` con `logo.svg` y `portada.jpg` (y opcional `screens/pc-inicio.png`, etc.).
-   Del proyecto del software: `public/assets/logo.svg` y `public/tutorial/portada.jpg`.
+1. Crea `public/assets/<id>/` con `logo.svg` (del proyecto del software: `public/assets/logo.svg`)
+   y, si quieres, capturas en `screens/pc-inicio.png`, etc.
 2. En `public/js/catalog.js` copia un bloque de `CATALOG` y cambia sus datos
    (id, nombre, colores, url, video, rubros, palabras clave, funciones y comparativa).
    Con `status: 'pronto'` aparece como "Próximamente" sin demo ni video.
-3. Prueba: `cd scripts && node check.mjs`
-4. Publica: `firebase deploy --only hosting --project sanorepos`
+3. Genera su portada: `cd scripts && node covers.mjs`
+4. Prueba: `node check.mjs`
+5. Publica: `firebase deploy --only hosting --project sanorepos`
 
 La órbita, el buscador, las tarjetas, SanoTV, la comparativa, el pie de página y la ficha (`#/<id>`) se generan solos.
 

@@ -146,8 +146,8 @@ export function startCosmos(canvas, items, { onHover, onClick } = {}) {
   function drawCore(t, R) {
     const [cx, cy] = center();
     const pulse = 1 + Math.sin(t * 1.6) * .05;
-    const r = Math.max(20, R * .06) * pulse;
-    ctx.globalAlpha = .55;
+    const r = Math.max(24, R * .075) * pulse;
+    ctx.globalAlpha = .85;
     let g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * 5);
     g.addColorStop(0, 'rgba(167,139,250,.35)');
     g.addColorStop(.4, 'rgba(34,211,238,.08)');
@@ -200,7 +200,7 @@ export function startCosmos(canvas, items, { onHover, onClick } = {}) {
     const r = p.sr * p.size;
     const { sx: x, sy: y } = p;
     const depthA = p.sz > 0 ? .55 : 1; // los planetas de atrás se ven más tenues
-    p.fade += ((hov ? 1 : inZone(x, y) ? .2 : 1) - p.fade) * .08;
+    p.fade += ((hov ? 1 : inZone(x, y) ? .7 : 1) - p.fade) * .08;
     ctx.globalAlpha = depthA * p.fade;
     // halo
     let g = ctx.createRadialGradient(x, y, r * .6, x, y, r * 2.6);

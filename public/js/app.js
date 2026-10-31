@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js';
-import { startCosmos, startWaves } from './cosmos.js';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261031b';
+import { startCosmos, startWaves } from './cosmos.js?v=20261031b';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -92,26 +92,10 @@ function renderMarquee() {
   $('#marquee').innerHTML = items.join('') + items.join('');
 }
 
-// ---------- Rotador del título ----------
-function startRotator() {
-  const words = ['restaurante', 'bodega', 'taller', 'consultorio', 'clínica dental', 'gimnasio', 'pizzería', 'abasto', 'negocio'];
-  const el = $('#rotator');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let w = -1, text = el.textContent;
-  const type = (target, done) => {
-    // borra hasta el prefijo común y escribe el resto letra por letra
-    if (!target.startsWith(text)) { text = text.slice(0, -1); el.textContent = text || '​'; return setTimeout(type, 45, target, done); }
-    if (text !== target) { text = target.slice(0, text.length + 1); el.textContent = text; return setTimeout(type, 85, target, done); }
-    done();
-  };
-  const next = () => { w = (w + 1) % words.length; type(words[w], () => setTimeout(next, 1900)); };
-  setTimeout(next, 2200);
-}
-
 // ---------- Buscador ----------
 const QUICK = [
   ['Restaurante', 'sano-restaurant'], ['Pizzería', 'sano-restaurant'], ['Bodega', 'sanogestion'], ['Abasto', 'sanogestion'],
-  ['Ferretería', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
+  ['Minimarket', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
   ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Cafetería', 'sano-restaurant']
 ];
 
@@ -177,7 +161,7 @@ function initFinder() {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName) && $('#detail').hidden) {
-      e.preventDefault(); input.focus({ preventScroll: true }); $('#buscar').scrollIntoView({ behavior: 'smooth' });
+      e.preventDefault(); input.focus({ preventScroll: true }); scrollToSection('buscar');
     }
   });
 }
@@ -187,13 +171,12 @@ function cardHtml(it, i) {
   return `<article class="card" style="${cssVars(it)};animation-delay:${i * 60}ms" data-cat="${esc(it.category)}" data-open="${it.id}" tabindex="0" aria-label="${esc(fullName(it))}">
     <div class="card-in">
       <div class="card-media">
-        <img src="/assets/${it.id}/portada.jpg" alt="" loading="lazy">
+        <img src="/assets/${it.id}/art.jpg" alt="" loading="lazy">
         <span class="card-badge"><i></i>En línea</span>
         <span class="card-time">${ico('video')} ${mins(it.minutes)}</span>
         <button class="card-play" data-video="${it.id}" aria-label="Ver video de ${esc(fullName(it))}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
       <div class="card-body">
-        <img class="card-logo" src="/assets/${it.id}/logo.svg" alt="" width="58" height="58">
         <h3>${nameHtml(it)}</h3>
         <p class="card-tag">${esc(it.tagline)}</p>
         <div class="card-rubros">${it.rubros.slice(0, 4).map((r) => `<span>${esc(r)}</span>`).join('')}</div>
@@ -257,7 +240,7 @@ function renderCatalog() {
 let tvIndex = 0;
 function renderTV() {
   $('#tvList').innerHTML = LIVE.map((it, i) => `<li class="tv-item" style="${cssVars(it)}" data-tv="${i}" tabindex="0" role="button" aria-label="Ver video de ${esc(fullName(it))}">
-    <div class="tv-thumb"><img src="/assets/${it.id}/portada.jpg" alt="" loading="lazy"><span>${mins(it.minutes)}</span></div>
+    <div class="tv-thumb"><img src="/assets/${it.id}/cover.jpg" alt="" loading="lazy"><span>${mins(it.minutes)}</span></div>
     <div><b>${esc(fullName(it))}</b><small>${esc(it.category)} · ${esc(it.rubros.slice(0, 2).join(', '))}</small><span class="eq"><i></i><i></i><i></i></span></div>
   </li>`).join('');
   const video = $('#tvVideo');
@@ -273,7 +256,7 @@ function selectTV(i, autoplay) {
   tvIndex = i;
   const it = LIVE[i], video = $('#tvVideo');
   video.pause();
-  video.poster = `/assets/${it.id}/portada.jpg`;
+  video.poster = `/assets/${it.id}/cover.jpg`;
   video.src = it.video;
   $('.tv-frame').style.setProperty('--tvc', it.color[0]);
   $$('.tv-item').forEach((li, k) => li.classList.toggle('on', k === i));
@@ -291,7 +274,7 @@ function selectTV(i, autoplay) {
 function playInTV(id) {
   const i = LIVE.findIndex((it) => it.id === id);
   if (i < 0) return;
-  $('#tv').scrollIntoView({ behavior: 'smooth' });
+  scrollToSection('tv');
   selectTV(i, true);
 }
 
@@ -299,15 +282,17 @@ function playInTV(id) {
 function renderBento() {
   $('#bento').innerHTML = COMMON.map(([icon, title, text], i) => `<div class="bento-item reveal" style="transition-delay:${i * 60}ms">
     <div class="bento-ico">${ico(icon)}</div><h3>${esc(title)}</h3><p>${esc(text)}</p>
-    ${i === 0 ? `<div class="sedes" id="sedes">${'<i></i>'.repeat(20)}</div><div class="sedes-admin"><b>ADM</b> Un panel para controlar todas tus sedes</div>` : ''}
+    ${i === 0 ? `<div class="demo-timer"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52"/></svg><div><b id="demoClock">30:00</b><small>PIN <span class="pin">1234</span></small></div></div>` : ''}
   </div>`).join('');
-  const cells = $$('#sedes i');
-  const colors = LIVE.map((it) => it.color[0]);
+  // reloj de la demo: corre una cuenta regresiva de muestra (60x más rápido) y vuelve a empezar
+  const clock = $('#demoClock'), arc = $('.demo-timer .arc');
+  if (!clock) return;
+  let left = 1800;
   setInterval(() => {
-    const c = cells[(Math.random() * cells.length) | 0];
-    c.style.setProperty('--c', colors[(Math.random() * colors.length) | 0]);
-    c.classList.toggle('lit');
-  }, 450);
+    left = left <= 0 ? 1800 : left - 6;
+    clock.textContent = `${String(Math.floor(left / 60)).padStart(2, '0')}:${String(left % 60).padStart(2, '0')}`;
+    arc.style.strokeDashoffset = 326.7 * (1 - left / 1800);
+  }, 100);
 }
 
 // ---------- Comparativa ----------
@@ -337,14 +322,14 @@ function detailHtml(it) {
       </div>
     </header>
     <div class="d-body">
-      <div class="d-video"><video controls playsinline preload="none" poster="/assets/${it.id}/portada.jpg" src="${it.video}" data-sw="${it.id}"></video></div>
+      <div class="d-video"><video controls playsinline preload="none" poster="/assets/${it.id}/cover.jpg" src="${it.video}" data-sw="${it.id}"></video></div>
       <div class="d-cols">
         <div>
           <p class="d-sub">Qué es</p>
           <p class="d-desc">${esc(it.description)}</p>
           <div class="d-facts">
             <div><small>Moneda</small><b>${esc(it.moneda)}</b></div>
-            <div><small>Sedes</small><b>20 sedes + administrador</b></div>
+            <div><small>Demo</small><b>30 min gratis · PIN 1234</b></div>
             <div><small>Funciona en</small><b>PC, tablet y teléfono</b></div>
             <div><small>Video</small><b>${mins(it.minutes)} narrado</b></div>
           </div>
@@ -406,10 +391,30 @@ const leave = () => {
   else history.replaceState(null, '', location.pathname + location.search), route();
 };
 
+// ---------- Navegación a secciones ----------
+// Centra el contenido de la sección bajo el menú; si es más alto que la pantalla, alinea su título arriba.
+function scrollToSection(id) {
+  if (id === 'top') return scrollTo({ top: 0, behavior: 'smooth' });
+  const sec = document.getElementById(id);
+  if (!sec) return;
+  const box = sec.querySelector('.wrap') || sec;
+  const r = box.getBoundingClientRect();
+  const navH = $('#nav').getBoundingClientRect().bottom + 12;
+  const avail = innerHeight - navH;
+  const top = r.top + scrollY;
+  const y = r.height < avail ? top - navH - (avail - r.height) / 2 : top - navH - 8;
+  scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+}
+
 // ---------- Interacciones globales ----------
 function initEvents() {
   document.addEventListener('click', (e) => {
     const t = e.target;
+    const anchor = t.closest('a[href^="#"]:not([href^="#/"])');
+    if (anchor && anchor.getAttribute('href').length > 1) {
+      e.preventDefault();
+      return scrollToSection(anchor.getAttribute('href').slice(1));
+    }
     const vid = t.closest('[data-video]');
     if (vid) { e.preventDefault(); e.stopPropagation(); return playInTV(vid.dataset.video); }
     if (t.closest('[data-close]')) return leave();
@@ -452,6 +457,7 @@ function initEvents() {
   const nav = $('#nav'), bar = $('.progress');
   const onScroll = () => {
     nav.classList.toggle('scrolled', scrollY > 30);
+    $('#waFloat').classList.toggle('show', scrollY > innerHeight * .5); // aparece al dejar el inicio
     const max = document.documentElement.scrollHeight - innerHeight;
     bar.style.width = `${(scrollY / max) * 100}%`;
   };
@@ -506,7 +512,6 @@ function init() {
   renderBento();
   renderCompare();
   initEvents();
-  startRotator();
 
   const label = $('#planetLabel');
   startCosmos($('#cosmos'), LIVE, {
