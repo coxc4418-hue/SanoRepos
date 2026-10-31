@@ -20,6 +20,7 @@ scripts/
   check.mjs             prueba 8 tamaños de pantalla (320 px a 1920 px)
   og.mjs                regenera assets/og.jpg
   covers.mjs            genera assets/<id>/cover.jpg (portada de cada software)
+  icons.mjs             genera los íconos PNG desde assets/logo.svg (logo al compartir en WhatsApp/Facebook)
 ```
 
 ## Agregar un software nuevo
@@ -43,3 +44,9 @@ La órbita, el buscador, las tarjetas, SanoTV, la comparativa, el pie de página
 
 Firebase Analytics (G-CBH09SZ0V4) registra: `view_item` (ficha abierta), `video_play`, `open_demo`,
 `contact_whatsapp`, `search` y `planet_click`.
+
+## Vista previa al compartir (WhatsApp / Facebook)
+
+`index.html` tiene las etiquetas `og:*` y `twitter:*` con URL completas hacia `assets/og.jpg` (1200×630)
+y el logo en PNG (`assets/apple-touch-icon.png`). Si cambias el inicio: `node scripts/og.mjs` (con `node scripts/serve.mjs` abierto).
+Facebook guarda la vista previa en caché: se refresca en https://developers.facebook.com/tools/debug/ con "Volver a extraer".
