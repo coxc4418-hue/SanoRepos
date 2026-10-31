@@ -14,12 +14,13 @@ public/
   js/app.js             arma buscador, catálogo, SanoTV, comparativa y fichas
   js/cosmos.js          animación orbital del inicio
   assets/<id>/          logo.svg, cover.jpg y screens/*.png de cada software
-  assets/og.jpg         imagen que sale al compartir el enlace
+  assets/share.png      logo de SanoRepos que sale al compartir el enlace
+  <id>.html             enlace para compartir cada software con su logo (lo genera share.mjs)
 scripts/
   serve.mjs             ver el sitio en la PC: node scripts/serve.mjs → http://127.0.0.1:5111
   check.mjs             prueba 8 tamaños de pantalla (320 px a 1920 px)
-  og.mjs                regenera assets/og.jpg
   covers.mjs            genera assets/<id>/cover.jpg (portada de cada software)
+  share.mjs             logos para compartir + páginas sanorepos.web.app/<id>
   icons.mjs             genera los íconos PNG desde assets/logo.svg (logo al compartir en WhatsApp/Facebook)
 ```
 
@@ -30,7 +31,7 @@ scripts/
 2. En `public/js/catalog.js` copia un bloque de `CATALOG` y cambia sus datos
    (id, nombre, colores, url, video, rubros, palabras clave, funciones y comparativa).
    Con `status: 'pronto'` aparece como "Próximamente" sin demo ni video.
-3. Genera su portada: `cd scripts && node covers.mjs`
+3. Genera su portada y su enlace para compartir: `cd scripts && node covers.mjs && node share.mjs`
 4. Prueba: `node check.mjs`
 5. Publica: `firebase deploy --only hosting --project sanorepos`
 
@@ -47,6 +48,9 @@ Firebase Analytics (G-CBH09SZ0V4) registra: `view_item` (ficha abierta), `video_
 
 ## Vista previa al compartir (WhatsApp / Facebook)
 
-`index.html` tiene las etiquetas `og:*` y `twitter:*` con URL completas hacia `assets/og.jpg` (1200×630)
-y el logo en PNG (`assets/apple-touch-icon.png`). Si cambias el inicio: `node scripts/og.mjs` (con `node scripts/serve.mjs` abierto).
-Facebook guarda la vista previa en caché: se refresca en https://developers.facebook.com/tools/debug/ con "Volver a extraer".
+Cada enlace se identifica por su logo:
+- `https://sanorepos.web.app` → logo de SanoRepos (`assets/share.png`).
+- `https://sanorepos.web.app/sano-gym` (y los demás `/<id>`) → logo, nombre y descripción de ese software; al abrirlo lleva a su ficha.
+  El botón "Compartir" de cada ficha usa este enlace. Los enlaces con `#/` no sirven para compartir: WhatsApp y Facebook ignoran lo que va después del `#`.
+
+WhatsApp y Facebook guardan la vista previa en caché: en Facebook se refresca en https://developers.facebook.com/tools/debug/ con "Volver a extraer".

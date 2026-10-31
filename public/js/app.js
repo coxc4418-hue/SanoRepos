@@ -424,7 +424,7 @@ function initEvents() {
     const share = t.closest('[data-share]');
     if (share) {
       const it = LIVE.find((c) => c.id === share.dataset.share);
-      const url = `${location.origin}/#/${it.id}`;
+      const url = `${location.origin}/${it.id}`; // página con el logo del software para la vista previa (scripts/share.mjs)
       if (navigator.share) navigator.share({ title: fullName(it), text: it.tagline, url }).catch(() => {});
       else navigator.clipboard?.writeText(url).then(() => { share.lastChild.textContent = ' ¡Enlace copiado!'; });
       return;
