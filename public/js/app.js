@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261102a';
-import { startCosmos, startWaves } from './cosmos.js?v=20261102a';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261102b';
+import { startCosmos, startWaves } from './cosmos.js?v=20261102b';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -98,7 +98,7 @@ function renderMarquee() {
 const QUICK = [
   ['Restaurante', 'sano-restaurant'], ['Pizzería', 'sano-restaurant'], ['Bodega', 'sanogestion'], ['Abasto', 'sanogestion'],
   ['Minimarket', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
-  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Cafetería', 'sano-restaurant']
+  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Cafetería', 'sano-restaurant']
 ];
 
 function score(it, q) {
@@ -193,7 +193,7 @@ function cardHtml(it, i) {
 
 function soonHtml(it) {
   const name = it ? fullName(it) : 'Tu rubro aquí';
-  return `<article class="card soon${it ? '' : ' wide'}" style="--pc:${it ? it.color[0] : '#a78bfa'};--pc2:${it ? it.color[1] : '#6366f1'}" data-cat="${it ? esc(it.category) : '*'}">
+  return `<article class="card soon"${it ? '' : ' id="soonCard"'} style="--pc:${it ? it.color[0] : '#a78bfa'};--pc2:${it ? it.color[1] : '#6366f1'}" data-cat="${it ? esc(it.category) : '*'}">
     <div class="card-in"><div>
       <div class="soon-orb">${ico('plus')}</div>
       <div><h3>${esc(name)}</h3>
@@ -201,6 +201,17 @@ function soonHtml(it) {
       <a class="btn btn-ghost" href="${waLink(it ? `Hola, me interesa ${name} cuando esté listo.` : 'Hola, quiero un software para mi negocio de: ')}" target="_blank" rel="noopener">${it ? 'Avísame cuando salga' : 'Proponer un software'}</a>
     </div></div>
   </article>`;
+}
+
+// "Tu rubro aquí" ocupa lo que sobre en la última fila (o la fila entera) para que la cuadrícula quede completa
+function fitLastRow() {
+  const grid = $('#grid'), soon = $('#soonCard');
+  const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+  const n = $$('.card:not(.hide)', grid).filter((c) => c !== soon).length;
+  const rest = n % cols;
+  const span = rest ? cols - rest : cols;
+  soon.style.gridColumn = `span ${span}`;
+  soon.classList.toggle('wide', span >= 2 || cols === 1); // franja horizontal; si ocupa 1 de varias columnas, va como tarjeta
 }
 
 function renderCatalog() {
@@ -219,7 +230,10 @@ function renderCatalog() {
       card.classList.toggle('hide', !show);
       if (show) { card.style.animation = 'none'; void card.offsetWidth; card.style.animation = ''; }
     });
+    fitLastRow();
   });
+  fitLastRow();
+  new ResizeObserver(fitLastRow).observe(grid);
   // inclinación 3D y reflejo que sigue al cursor
   if (matchMedia('(hover: hover)').matches) {
     grid.addEventListener('pointermove', (e) => {
