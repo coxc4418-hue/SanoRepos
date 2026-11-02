@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261031b';
-import { startCosmos, startWaves } from './cosmos.js?v=20261031b';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261102a';
+import { startCosmos, startWaves } from './cosmos.js?v=20261102a';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -71,6 +71,8 @@ const ICONS = {
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
   card: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
   dumbbell: '<path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12"/>',
+  scissors: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
+  chair: '<path d="M7 3h10v8H7zM5 11h14v4H5zM7 15v6M17 15v6"/>',
   play: '<circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/>',
   download: '<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
   cloud: '<path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/>',

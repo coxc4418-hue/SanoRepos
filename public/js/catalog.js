@@ -177,6 +177,32 @@ export const CATALOG = [
       ['cart', 'Tienda', 'Suplementos y productos en la misma caja.']
     ],
     compare: { ventas: 'Tienda', inventario: true, agenda: 'Clases', whatsapp: true, qr: 'Carnet y acceso', especial: 'Membresías' }
+  },
+  {
+    id: 'sano-cortes',
+    name: ['Sano', 'Cortes'],
+    status: 'disponible',
+    category: 'Belleza',
+    tagline: 'Agenda por barbero, reservas en línea y sala de espera para barberías.',
+    description:
+      'SanoCortes organiza tu barbería de punta a punta. Cada barbero tiene su agenda y tus clientes reservan solos en línea viendo solo las horas libres; la sala de espera numera a los que llegan sin cita con su tiempo estimado y una pantalla de turnos para el TV. Guarda la receta de cada corte, avisa por WhatsApp a quién le toca volver, maneja sellos de fidelidad y club de cortes, y liquida a tus barberos por comisión, alquiler de silla o sueldo.',
+    color: ['#e8b04b', '#7a1f1f'],
+    url: 'https://sano-cortes.web.app/',
+    video: 'https://sano-cortes.web.app/tutorial/sano-cortes-tutorial.mp4',
+    minutes: 8.1,
+    rubros: ['Barbería', 'Peluquería masculina', 'Barber shop', 'Salón de belleza'],
+    keywords: 'barberia barbero barber shop peluqueria corte cabello pelo degradado fade barba afeitado citas turnos reservas agenda comisiones alquiler de silla fidelidad sellos club',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['calendar', 'Agenda por barbero', 'Reservas en línea con horas libres reales.'],
+      ['chair', 'Sala de espera', 'Turnos sin cita y pantalla para el TV.'],
+      ['scissors', 'Receta del corte', 'Degradado, máquina, barba y foto.'],
+      ['whatsapp', '“Te toca corte”', 'Avisos por WhatsApp en un toque.'],
+      ['heart', 'Sellos y club', 'Corte gratis y cortes prepagados.'],
+      ['cash', 'Pago a barberos', 'Comisión, alquiler de silla o sueldo.']
+    ],
+    compare: { ventas: 'Servicios y productos', inventario: true, agenda: 'Por barbero', whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Sala de espera' }
   }
 ];
 
