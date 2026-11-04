@@ -203,6 +203,32 @@ export const CATALOG = [
       ['cash', 'Pago a barberos', 'Comisión, alquiler de silla o sueldo.']
     ],
     compare: { ventas: 'Servicios y productos', inventario: true, agenda: 'Por barbero', whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Sala de espera' }
+  },
+  {
+    id: 'sano-farmacia',
+    name: ['Sano', 'Farmacia'],
+    status: 'disponible',
+    category: 'Salud',
+    tagline: 'Venta por caja, blíster o unidad, lotes y vencimientos, recetas y pedidos en línea para farmacias.',
+    description:
+      'SanoFarmacia maneja tu farmacia completa. Vendes por caja, blíster o unidad con el lector de código de barras y el sistema descuenta primero el lote que vence antes; te avisa de lo que está por vencer o agotarse y te arma el pedido para tu droguería. Lleva el libro de recetas y de controlados, la ficha de cada paciente con sus alergias y tratamientos, le avisa por WhatsApp cuando se le acaba su medicina, maneja convenios y seguros, puntos y un catálogo para que tus clientes te pidan en línea con delivery.',
+    color: ['#34d399', '#0f766e'],
+    url: 'https://sano-farmacia.web.app/',
+    video: 'https://sano-farmacia.web.app/tutorial/sano-farmacia-tutorial.mp4',
+    minutes: 6.5,
+    rubros: ['Farmacia', 'Droguería', 'Botica', 'Farmacia de barrio', 'Cadena de farmacias'],
+    keywords: 'farmacia farmaceutico drogueria botica medicamentos medicinas receta recipe controlados psicotropicos antibioticos lotes vencimientos fraccionado blister unidad principio activo generico codigo de barras convenios seguros pedidos delivery recompra tension glucosa',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['pill', 'Caja, blíster o unidad', 'Fracciona con su precio y lector de código.'],
+      ['layers', 'Lotes y vencimientos', 'Sale primero lo que vence antes.'],
+      ['shield', 'Recetas y controlados', 'Libro de recetas listo para la inspección.'],
+      ['whatsapp', 'Recompras', 'Avisa cuando se acaba el tratamiento.'],
+      ['cart', 'Pedidos en línea', 'Catálogo propio con delivery.'],
+      ['box', 'Compras', 'Sugerido, recepción y cuentas por pagar.']
+    ],
+    compare: { ventas: 'Caja, blíster o unidad', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del paciente', especial: 'Recetas y vencimientos' }
   }
 ];
 

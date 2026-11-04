@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261102b';
-import { startCosmos, startWaves } from './cosmos.js?v=20261102b';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261103a';
+import { startCosmos, startWaves } from './cosmos.js?v=20261103a';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -98,7 +98,7 @@ function renderMarquee() {
 const QUICK = [
   ['Restaurante', 'sano-restaurant'], ['Pizzería', 'sano-restaurant'], ['Bodega', 'sanogestion'], ['Abasto', 'sanogestion'],
   ['Minimarket', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
-  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Cafetería', 'sano-restaurant']
+  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Farmacia', 'sano-farmacia'], ['Droguería', 'sano-farmacia'], ['Cafetería', 'sano-restaurant']
 ];
 
 function score(it, q) {
