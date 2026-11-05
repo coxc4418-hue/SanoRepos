@@ -229,6 +229,32 @@ export const CATALOG = [
       ['box', 'Compras', 'Sugerido, recepción y cuentas por pagar.']
     ],
     compare: { ventas: 'Caja, blíster o unidad', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del paciente', especial: 'Recetas y vencimientos' }
+  },
+  {
+    id: 'sano-vet',
+    name: ['Sano', 'Vet'],
+    status: 'disponible',
+    category: 'Salud',
+    tagline: 'Historia clínica, vacunas con carnet digital, agenda, peluquería y tienda para clínicas veterinarias.',
+    description:
+      'SanoVet maneja tu clínica veterinaria completa. Lleva la historia clínica de cada mascota con sus signos vitales, diagnóstico y récipe; sus vacunas y desparasitaciones con carnet digital y QR en el teléfono del tutor; la agenda de consultas, vacunas y baños con sala de espera; la peluquería y la hospitalización. Le avisa a cada tutor por WhatsApp cuándo le toca la próxima vacuna, y vende alimento por saco o por kilo, antiparasitarios y accesorios con lotes, vencimientos y pedidos en línea.',
+    color: ['#a78bfa', '#7c3aed'],
+    url: 'https://sano-vet.web.app/',
+    video: 'https://sano-vet.web.app/tutorial/sano-vet-tutorial.mp4',
+    minutes: 7.6,
+    rubros: ['Clínica veterinaria', 'Consultorio veterinario', 'Pet shop', 'Peluquería canina', 'Hospital veterinario'],
+    keywords: 'veterinaria veterinario clinica veterinaria mascotas perros gatos vacunas carnet de vacunacion desparasitacion antipulgas historia clinica consulta recipe peluqueria canina grooming baño hospitalizacion pet shop alimento concentrado croquetas agenda citas tutor recordatorios',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['activity', 'Historia clínica', 'Signos vitales, diagnóstico y récipe.'],
+      ['qr', 'Carnet de vacunas', 'Digital con QR en el teléfono del tutor.'],
+      ['calendar', 'Agenda y sala de espera', 'Por veterinario y peluquero.'],
+      ['scissors', 'Peluquería y hospital', 'Por etapas, con aviso al tutor.'],
+      ['whatsapp', 'Recordatorios', '“Le toca su vacuna” en un toque.'],
+      ['cart', 'Tienda y pedidos', 'Alimento por kilo, lotes y delivery.']
+    ],
+    compare: { ventas: 'Servicios y productos', inventario: 'Por lotes', agenda: 'Por veterinario', whatsapp: true, qr: 'Carnet de la mascota', especial: 'Historia clínica y vacunas' }
   }
 ];
 
