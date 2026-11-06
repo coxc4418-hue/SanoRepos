@@ -73,3 +73,12 @@ for (const it of CATALOG.filter((c) => c.status !== 'pronto')) {
   console.log('enlace', `${SITE}/${it.id}`);
 }
 await browser.close();
+
+// Número de software en el HTML inicial (así no se ve un número viejo antes de que cargue el JavaScript)
+const LIVE_N = CATALOG.filter((it) => it.status !== 'pronto').length;
+const idx = path.join(pub, 'index.html');
+const html = (await readFile(idx, 'utf8'))
+  .replace(/(<span id="heroCount">)\d+(<\/span>)/, `$1${LIVE_N}$2`)
+  .replace(/<b data-count="\d+" id="statSoft">\d+<\/b>/, `<b data-count="${LIVE_N}" id="statSoft">0</b>`);
+await writeFile(idx, html);
+console.log('index.html:', LIVE_N, 'software');
