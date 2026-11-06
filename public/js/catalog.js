@@ -255,6 +255,32 @@ export const CATALOG = [
       ['cart', 'Tienda y pedidos', 'Alimento por kilo, lotes y delivery.']
     ],
     compare: { ventas: 'Servicios y productos', inventario: 'Por lotes', agenda: 'Por veterinario', whatsapp: true, qr: 'Carnet de la mascota', especial: 'Historia clínica y vacunas' }
+  },
+  {
+    id: 'sano-taller',
+    name: ['Sano', 'Taller'],
+    status: 'disponible',
+    category: 'Automotriz',
+    tagline: 'Órdenes de trabajo, presupuesto aprobado desde el teléfono, mantenimiento por kilometraje, autolavado y repuestos.',
+    description:
+      'SanoTaller maneja tu taller mecánico y tu autolavado. Recibe cada vehículo con su kilometraje, combustible, revisión y los daños marcados en el dibujo; lleva las órdenes en un tablero por estado con la mano de obra de cada mecánico y los repuestos, y manda el presupuesto por WhatsApp para que el cliente lo apruebe desde su teléfono. Calcula el próximo cambio de aceite, frenos o correa por kilometraje y te dice a quién escribirle; maneja la cola del autolavado por placa y vende repuestos y aceite por galón o por litro con inventario, compras y comisión por mecánico.',
+    color: ['#60a5fa', '#1d4ed8'],
+    url: 'https://sano-taller.web.app/',
+    video: 'https://sano-taller.web.app/tutorial/sano-taller-tutorial.mp4',
+    minutes: 7.3,
+    rubros: ['Taller mecánico', 'Autolavado', 'Lubricadora', 'Venta de repuestos', 'Taller de motos', 'Flotas y taxis'],
+    keywords: 'taller mecanico mecanica automotriz autolavado lavado de carros lavadero car wash lubricadora cambio de aceite repuestos autopartes vehiculos carros motos placa kilometraje mantenimiento frenos correa alineacion balanceo diagnostico escaner presupuesto orden de trabajo recepcion flota taxi',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['kanban', 'Órdenes de trabajo', 'Tablero por estado, mecánico y bitácora.'],
+      ['phone', 'Presupuesto en el teléfono', 'El cliente aprueba con un toque.'],
+      ['gauge', 'Mantenimiento por km', 'Aceite, frenos y correa a tiempo.'],
+      ['droplet', 'Autolavado', 'Cola por placa con aviso al cliente.'],
+      ['qr', 'Ficha del vehículo', 'Estado e historial con QR.'],
+      ['wrench', 'Repuestos y aceite', 'Por galón o litro, compatibles con el carro.']
+    ],
+    compare: { ventas: 'Órdenes, lavados y repuestos', inventario: true, agenda: 'Por mecánico', whatsapp: true, qr: 'Ficha del vehículo', especial: 'Presupuesto y kilometraje' }
   }
 ];
 

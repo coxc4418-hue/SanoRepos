@@ -84,7 +84,10 @@ const ICONS = {
   right: '<path d="m9 18 6-6-6-6"/>',
   check: '<path d="m5 12 5 5 9-10"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
-  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  gauge: '<path d="M12 14l4-4"/><path d="M3.3 18a9 9 0 1 1 17.4 0z"/>',
+  droplet: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+  wrench: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.5-.6-.6-2.5z"/>'
 };
 const ico = (n) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ICONS.check}</svg>`;
 
@@ -98,7 +101,7 @@ function renderMarquee() {
 const QUICK = [
   ['Restaurante', 'sano-restaurant'], ['Pizzería', 'sano-restaurant'], ['Bodega', 'sanogestion'], ['Abasto', 'sanogestion'],
   ['Minimarket', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
-  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Farmacia', 'sano-farmacia'], ['Droguería', 'sano-farmacia'], ['Veterinaria', 'sano-vet'], ['Pet shop', 'sano-vet'], ['Cafetería', 'sano-restaurant']
+  ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Farmacia', 'sano-farmacia'], ['Droguería', 'sano-farmacia'], ['Veterinaria', 'sano-vet'], ['Pet shop', 'sano-vet'], ['Taller mecánico', 'sano-taller'], ['Autolavado', 'sano-taller'], ['Cafetería', 'sano-restaurant']
 ];
 
 function score(it, q) {
