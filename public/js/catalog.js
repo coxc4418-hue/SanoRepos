@@ -179,6 +179,32 @@ export const CATALOG = [
     compare: { ventas: 'Tienda', inventario: true, agenda: 'Clases', whatsapp: true, qr: 'Carnet y acceso', especial: 'Membresías' }
   },
   {
+    id: 'sano-entrenador',
+    name: ['Sano', 'Entrenador'],
+    status: 'disponible',
+    category: 'Fitness',
+    tagline: 'Agenda, rutinas guiadas y el progreso de cada alumno para entrenadores personales.',
+    description:
+      'SanoEntrenador organiza tu trabajo como entrenador personal. Agendas tus sesiones (presenciales u online), marcas la asistencia con el QR del carnet y los paquetes se descuentan solos. Armas rutinas con más de 120 ejercicios explicados con su mapa de músculos o las creas a la medida en segundos. Cada alumno tiene su carnet en el teléfono: entrena con su rutina, anota sus cargas, se pesa y ve su progreso en gráficas. Los recordatorios y cobros salen por WhatsApp, y tienes tu propia página con tus planes.',
+    color: ['#fb923c', '#9a3412'],
+    url: 'https://sano-entrenador.web.app/',
+    video: 'https://sano-entrenador.web.app/tutorial/sano-entrenador-tutorial.mp4',
+    minutes: 5.5,
+    rubros: ['Entrenador personal', 'Coach online', 'Preparador físico', 'Entrenamiento funcional', 'Nutrición deportiva'],
+    keywords: 'entrenador personal coach trainer preparador fisico entrenamiento online asesoria rutinas ejercicios progreso peso medidas evaluaciones sesiones paquetes alumnos clientes fitness gimnasio funcional calistenia',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['calendar', 'Agenda de sesiones', 'Presenciales, online y series semanales.'],
+      ['qr', 'Asistencia con QR', 'Descuenta sesiones del paquete sola.'],
+      ['dumbbell', 'Rutinas guiadas', '120+ ejercicios y rutinas a la medida.'],
+      ['chart', 'Progreso del alumno', 'Peso, medidas y logros en su carnet.'],
+      ['whatsapp', 'Recordatorios por WhatsApp', 'Confirmaciones, vencimientos y cobros.'],
+      ['globe', 'Tu página pública', 'Tus planes y un botón para escribirte.']
+    ],
+    compare: { ventas: 'Planes y sesiones', inventario: false, agenda: true, whatsapp: true, qr: 'Carnet y asistencia', especial: 'Progreso del alumno' }
+  },
+  {
     id: 'sano-cortes',
     name: ['Sano', 'Cortes'],
     status: 'disponible',
