@@ -60,7 +60,7 @@ export const CATALOG = [
     url: 'https://sano-gestion.web.app/',
     video: 'https://sano-gestion.web.app/tutorial/sanogestion-tutorial.mp4',
     minutes: 6.4,
-    rubros: ['Bodega', 'Abasto', 'Minimarket', 'Supermercado', 'Tienda', 'Licorería'],
+    rubros: ['Bodega', 'Abasto', 'Minimarket', 'Supermercado', 'Tienda', 'Frutería'],
     keywords: 'bodega abasto minimarket supermercado tienda comercio licoreria charcuteria papeleria perfumeria kiosko fiados credito ventas inventario mercado verduleria frutería carniceria',
     moneda: '$ y Bs con tasa BCV',
     screens: [],
@@ -307,6 +307,32 @@ export const CATALOG = [
       ['wrench', 'Repuestos y aceite', 'Por galón o litro, compatibles con el carro.']
     ],
     compare: { ventas: 'Órdenes, lavados y repuestos', inventario: true, agenda: 'Por mecánico', whatsapp: true, qr: 'Ficha del vehículo', especial: 'Presupuesto y kilometraje' }
+  },
+  {
+    id: 'sano-licores',
+    name: ['Sano', 'Licores'],
+    status: 'disponible',
+    category: 'Comercio',
+    tagline: 'Venta por unidad, six-pack o caja, fría o al mayor, envases retornables, combos y fiado para licorerías.',
+    description:
+      'SanoLicores maneja tu licorería completa. Vendes por unidad, six-pack o caja con el lector de código de barras, fría o al tiempo, al detal o al mayor con su precio. Lleva tus envases retornables: cobra el depósito de los vacíos que faltan o se los presta al cliente y te dice quién te debe. Arma combos de ron con refresco y hielo, controla el fiado con un límite por cliente, le escribe por WhatsApp al que dejó de venir y te da un catálogo para que te pidan en línea, bien frías y con delivery. También compras a tus distribuidoras, roturas, vencimientos, caja en dos monedas y reportes de ganancia.',
+    color: ['#fbbf24', '#9f1239'],
+    url: 'https://sano-licores.web.app/',
+    video: 'https://sano-licores.web.app/tutorial/sano-licores-tutorial.mp4',
+    minutes: 6.5,
+    rubros: ['Licorería', 'Depósito de licores', 'Distribuidora de bebidas', 'Venta de cervezas', 'Bodegón'],
+    keywords: 'licoreria licores licor deposito cerveza cervezas ron whisky vodka vino anis aguardiente tequila refrescos hielo bebidas bodegon distribuidora caja six pack fria frias al mayor mayorista detal envases retornables vacios gaveras deposito combos fiado credito delivery pedidos',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['box', 'Unidad, six-pack o caja', 'Cada uno con su precio y lector de código.'],
+      ['droplet', 'Fría o al tiempo', 'Recargo por frío y precio al mayor.'],
+      ['layers', 'Envases retornables', 'Depósito, préstamo y quién te debe vacíos.'],
+      ['cart', 'Combos y pedidos', 'Ron + refresco + hielo y catálogo en línea.'],
+      ['card', 'Fiado con límite', 'Saldo por cliente y cobro en un toque.'],
+      ['whatsapp', 'Clientes que vuelven', 'Oferta por WhatsApp al que dejó de venir.']
+    ],
+    compare: { ventas: 'Unidad, six-pack o caja', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Envases retornables y fiado' }
   }
 ];
 
