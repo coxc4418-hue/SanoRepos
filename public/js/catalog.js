@@ -333,9 +333,34 @@ export const CATALOG = [
       ['whatsapp', 'Clientes que vuelven', 'Oferta por WhatsApp al que dejó de venir.']
     ],
     compare: { ventas: 'Unidad, six-pack o caja', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Envases retornables y fiado' }
+  },
+  {
+    id: 'sano-condominio',
+    name: ['Sano', 'Condominio'],
+    status: 'disponible',
+    category: 'Inmobiliaria',
+    tagline: 'Recibos por alícuota, cobranza en dólares y bolívares, portal del propietario y votaciones para condominios.',
+    description:
+      'SanoCondominio administra tu condominio sin hojas de cálculo. Cargas los gastos del mes con un toque por categoría y emites todos los recibos en un clic, repartidos por alícuota con honorarios, fondo de reserva, cuotas especiales y mora. Cobras en dólares o bolívares a la tasa BCV del día, confirmas los pagos que reportan los propietarios y les recuerdas su deuda por WhatsApp. Cada propietario tiene su portal para ver sus recibos, reportar su pago, leer los comunicados, votar en las asambleas y reservar el salón de fiestas. También fondos, solicitudes, constancias de solvencia y reportes para la junta.',
+    color: ['#2dd4bf', '#0e7490'],
+    url: 'https://sano-condominio.web.app/',
+    video: 'https://sano-condominio.web.app/tutorial/sano-condominio-tutorial.mp4',
+    minutes: 6,
+    rubros: ['Junta de condominio', 'Administradora de condominios', 'Edificio residencial', 'Conjunto residencial', 'Centro comercial'],
+    keywords: 'condominio condominios junta administradora administracion edificio residencias conjunto residencial urbanizacion torre apartamento propietario inquilino alicuota recibo recibos cuota gastos comunes fondo de reserva cuota especial mora moroso morosos cobranza pago movil bcv solvencia estado de cuenta asamblea votacion comunicado reserva salon parrillera',
+    moneda: 'Dólares, bolívares (tasa BCV) o la moneda de tu país',
+    screens: [],
+    features: [
+      ['book', 'Recibos por alícuota', 'Fondo de reserva, cuotas especiales y mora.'],
+      ['cash', 'Cobranza en $ y Bs', 'Tasa BCV del día y pagos reportados.'],
+      ['whatsapp', 'Morosos por WhatsApp', 'Recordatorio con su deuda y su portal.'],
+      ['qr', 'Portal del propietario', 'Recibos, reportar pago y comunicados.'],
+      ['users', 'Votaciones', 'Ponderadas por alícuota con quórum y acta.'],
+      ['calendar', 'Áreas comunes', 'Reservas sin choques y con su cobro.']
+    ],
+    compare: { ventas: 'Recibos y cobranza', inventario: false, agenda: 'Reservas de áreas', whatsapp: true, qr: 'Portal del propietario', especial: 'Alícuotas y votaciones' }
   }
 ];
-
 // Lo que incluyen todos los software Sano (sección "Todos incluyen")
 export const COMMON = [
   ['play', 'Demo gratis de 30 minutos', 'Pruébalo sin registrarte, con datos de ejemplo. PIN de la demo: 1234.'],

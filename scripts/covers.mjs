@@ -31,7 +31,7 @@ for (const it of CATALOG) {
     .logo { position: absolute; right: 150px; top: 50%; width: 220px; height: 220px; transform: translateY(-50%); border-radius: 52px; box-shadow: 0 30px 80px -10px ${c1}aa; }
     .txt { position: absolute; left: 90px; top: 50%; transform: translateY(-50%); width: 640px; }
     .cat { font: 600 22px Inter; letter-spacing: .18em; text-transform: uppercase; color: ${c1}; filter: brightness(1.3); }
-    h1 { font: 700 104px/1 'Space Grotesk'; letter-spacing: -.03em; margin-top: 16px; }
+    h1 { font: 700 ${it.name.join('').length > 12 ? 84 : 104}px/1 'Space Grotesk'; letter-spacing: -.03em; margin-top: 16px; }
     h1 em { font-style: normal; background: linear-gradient(100deg, ${c1}, ${c2}); -webkit-background-clip: text; color: transparent; filter: brightness(1.3) saturate(1.2); }
     p { font-size: 28px; line-height: 1.35; color: #c9cce8; margin-top: 22px; }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }

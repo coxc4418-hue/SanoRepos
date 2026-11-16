@@ -77,7 +77,7 @@ for (const s of SIZES) {
   const afterSearch = await page.evaluate(overflow, s.width);
   main.sw = Math.max(main.sw, afterSearch.sw); main.over.push(...afterSearch.over);
   // ficha
-  await page.evaluate(() => { location.hash = '/sano-dental'; });
+  await page.evaluate(() => { location.hash = '/sano-condominio'; });
   await sleep(900);
   const det = await page.evaluate((W) => {
     const p = document.querySelector('#detailPanel');
