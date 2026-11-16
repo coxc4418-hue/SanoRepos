@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261116a';
-import { startCosmos, startWaves } from './cosmos.js?v=20261116a';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261116b';
+import { startCosmos, startWaves } from './cosmos.js?v=20261116b';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
