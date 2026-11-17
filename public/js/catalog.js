@@ -359,6 +359,32 @@ export const CATALOG = [
       ['calendar', 'Áreas comunes', 'Reservas sin choques y con su cobro.']
     ],
     compare: { ventas: 'Recibos y cobranza', inventario: false, agenda: 'Reservas de áreas', whatsapp: true, qr: 'Portal del propietario', especial: 'Alícuotas y votaciones' }
+  },
+  {
+    id: 'sano-academia',
+    name: ['Sano', 'Academia'],
+    status: 'disponible',
+    category: 'Educación',
+    tagline: 'Horarios, asistencia, notas, mensualidades y portales del alumno y del profesor para academias y cursos.',
+    description:
+      'SanoAcademia lleva tu academia o instituto de cursos en orden. Armas el horario semanal y el sistema te avisa si un aula o un profesor choca. Pasas la lista con un toque y avisas por WhatsApp al representante de quien faltó, cargas las notas con su plan de evaluación y el promedio se calcula solo. Generas las mensualidades del mes en un clic con becas, descuento por hermanos y recargo por mora, y cobras en dólares o bolívares a la tasa BCV del día. Cada alumno tiene su portal para ver su horario, sus notas y su asistencia y reportar su pago; cada profesor pasa la lista y carga las notas desde su teléfono, y su pago se calcula con las clases dictadas. También inscripción en línea con cupos, certificados con QR verificable y reportes.',
+    color: ['#818cf8', '#7c3aed'],
+    url: 'https://sano-academia.web.app/',
+    video: 'https://sano-academia.web.app/tutorial/sano-academia-tutorial.mp4',
+    minutes: 6,
+    rubros: ['Academia de idiomas', 'Escuela de música', 'Academia de computación', 'Escuela de danza y arte', 'Preuniversitario y tutorías', 'Instituto de cursos y oficios'],
+    keywords: 'academia academias instituto escuela cursos curso clases taller talleres idiomas ingles musica guitarra piano canto danza baile ballet arte dibujo pintura computacion programacion robotica preuniversitario tutorias refuerzo escolar oratoria cocina reposteria belleza maquillaje oficios deporte natacion futbol alumno alumnos estudiante representante profesor profesores docente horario asistencia lista notas boletin calificaciones mensualidad mensualidades inscripcion matricula beca certificado constancia carnet',
+    moneda: 'Dólares, bolívares (tasa BCV) o la moneda de tu país',
+    screens: [],
+    features: [
+      ['calendar', 'Horario sin choques', 'Aulas y profesores, por día y semana.'],
+      ['check', 'Asistencia en un toque', 'Y aviso al representante si faltó.'],
+      ['book', 'Notas y boletines', 'Plan de evaluación y promedio automático.'],
+      ['cash', 'Mensualidades en $ y Bs', 'Becas, hermanos y mora; tasa BCV.'],
+      ['qr', 'Portal del alumno', 'Horario, notas, pagos y avisos.'],
+      ['users', 'Portal del profesor', 'Pasa lista y carga notas en su teléfono.']
+    ],
+    compare: { ventas: 'Mensualidades y cobranza', inventario: false, agenda: 'Horario de clases', whatsapp: true, qr: 'Portal del alumno y certificados', especial: 'Asistencia, notas y portal del profesor' }
   }
 ];
 // Lo que incluyen todos los software Sano (sección "Todos incluyen")

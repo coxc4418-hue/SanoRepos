@@ -102,7 +102,8 @@ const QUICK = [
   ['Restaurante', 'sano-restaurant'], ['Pizzería', 'sano-restaurant'], ['Bodega', 'sanogestion'], ['Abasto', 'sanogestion'],
   ['Minimarket', 'sanogestion'], ['Taller de celulares', 'sano-tecnico'], ['Consultorio médico', 'sano-doctor'],
   ['Dentista', 'sano-dental'], ['Ortodoncia', 'sano-dental'], ['Gimnasio', 'sano-gym'], ['CrossFit', 'sano-gym'], ['Entrenador personal', 'sano-entrenador'], ['Barbería', 'sano-cortes'], ['Peluquería', 'sano-cortes'], ['Farmacia', 'sano-farmacia'], ['Droguería', 'sano-farmacia'], ['Veterinaria', 'sano-vet'], ['Pet shop', 'sano-vet'], ['Taller mecánico', 'sano-taller'], ['Autolavado', 'sano-taller'], ['Cafetería', 'sano-restaurant'],
-  ['Licorería', 'sano-licores'], ['Depósito de licores', 'sano-licores'], ['Condominio', 'sano-condominio'], ['Residencias', 'sano-condominio'], ['Junta de condominio', 'sano-condominio'], ['Administradora', 'sano-condominio']
+  ['Licorería', 'sano-licores'], ['Depósito de licores', 'sano-licores'], ['Condominio', 'sano-condominio'], ['Residencias', 'sano-condominio'], ['Junta de condominio', 'sano-condominio'], ['Administradora', 'sano-condominio'],
+  ['Academia', 'sano-academia'], ['Cursos', 'sano-academia'], ['Escuela de música', 'sano-academia'], ['Instituto de idiomas', 'sano-academia']
 ];
 
 function score(it, q) {
