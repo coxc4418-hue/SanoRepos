@@ -280,7 +280,7 @@ export const CATALOG = [
       ['whatsapp', 'Recordatorios', '“Le toca su vacuna” en un toque.'],
       ['cart', 'Tienda y pedidos', 'Alimento por kilo, lotes y delivery.']
     ],
-    compare: { ventas: 'Servicios y productos', inventario: 'Por lotes', agenda: 'Por veterinario', whatsapp: true, qr: 'Carnet de la mascota', especial: 'Historia clínica y vacunas' }
+    compare: { ventas: 'Servicios y productos', inventario: 'Por lotes', agenda: 'Por veterinario', whatsapp: true, qr: 'Carnet de la mascota', especial: 'Historia y vacunas' }
   },
   {
     id: 'sano-taller',
@@ -306,7 +306,7 @@ export const CATALOG = [
       ['qr', 'Ficha del vehículo', 'Estado e historial con QR.'],
       ['wrench', 'Repuestos y aceite', 'Por galón o litro, compatibles con el carro.']
     ],
-    compare: { ventas: 'Órdenes, lavados y repuestos', inventario: true, agenda: 'Por mecánico', whatsapp: true, qr: 'Ficha del vehículo', especial: 'Presupuesto y kilometraje' }
+    compare: { ventas: 'Órdenes y lavados', inventario: true, agenda: 'Por mecánico', whatsapp: true, qr: 'Ficha del vehículo', especial: 'Presupuesto y kilometraje' }
   },
   {
     id: 'sano-licores',
@@ -332,7 +332,7 @@ export const CATALOG = [
       ['card', 'Fiado con límite', 'Saldo por cliente y cobro en un toque.'],
       ['whatsapp', 'Clientes que vuelven', 'Oferta por WhatsApp al que dejó de venir.']
     ],
-    compare: { ventas: 'Unidad, six-pack o caja', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Envases retornables y fiado' }
+    compare: { ventas: 'Unidad, six-pack o caja', inventario: 'Por lotes', agenda: false, whatsapp: true, qr: 'Tarjeta del cliente', especial: 'Retornables y fiado' }
   },
   {
     id: 'sano-condominio',
@@ -348,7 +348,7 @@ export const CATALOG = [
     minutes: 6,
     rubros: ['Junta de condominio', 'Administradora de condominios', 'Edificio residencial', 'Conjunto residencial', 'Centro comercial'],
     keywords: 'condominio condominios junta administradora administracion edificio residencias conjunto residencial urbanizacion torre apartamento propietario inquilino alicuota recibo recibos cuota gastos comunes fondo de reserva cuota especial mora moroso morosos cobranza pago movil bcv solvencia estado de cuenta asamblea votacion comunicado reserva salon parrillera',
-    moneda: 'Dólares, bolívares (tasa BCV) o la moneda de tu país',
+    moneda: 'La moneda de tu país',
     screens: [],
     features: [
       ['book', 'Recibos por alícuota', 'Fondo de reserva, cuotas especiales y mora.'],
@@ -374,7 +374,7 @@ export const CATALOG = [
     minutes: 6,
     rubros: ['Academia de idiomas', 'Escuela de música', 'Academia de computación', 'Escuela de danza y arte', 'Preuniversitario y tutorías', 'Instituto de cursos y oficios'],
     keywords: 'academia academias instituto escuela cursos curso clases taller talleres idiomas ingles musica guitarra piano canto danza baile ballet arte dibujo pintura computacion programacion robotica preuniversitario tutorias refuerzo escolar oratoria cocina reposteria belleza maquillaje oficios deporte natacion futbol alumno alumnos estudiante representante profesor profesores docente horario asistencia lista notas boletin calificaciones mensualidad mensualidades inscripcion matricula beca certificado constancia carnet',
-    moneda: 'Dólares, bolívares (tasa BCV) o la moneda de tu país',
+    moneda: 'La moneda de tu país',
     screens: [],
     features: [
       ['calendar', 'Horario sin choques', 'Aulas y profesores, por día y semana.'],
@@ -384,7 +384,33 @@ export const CATALOG = [
       ['qr', 'Portal del alumno', 'Horario, notas, pagos y avisos.'],
       ['users', 'Portal del profesor', 'Pasa lista y carga notas en su teléfono.']
     ],
-    compare: { ventas: 'Mensualidades y cobranza', inventario: false, agenda: 'Horario de clases', whatsapp: true, qr: 'Portal del alumno y certificados', especial: 'Asistencia, notas y portal del profesor' }
+    compare: { ventas: 'Mensualidades', inventario: false, agenda: 'Horario de clases', whatsapp: true, qr: 'Portal y certificados', especial: 'Asistencia y notas' }
+  },
+  {
+    id: 'sano-optica',
+    name: ['Sano', 'Óptica'],
+    status: 'pronto',
+    category: 'Salud',
+    tagline: 'Examen visual, órdenes de laboratorio, abonos, monturas y portal del paciente para ópticas.',
+    description:
+      'SanoÓptica lleva tu óptica en orden. Registras el examen visual con la fórmula de cada ojo y el sistema valida los valores, transpone el cilindro y sugiere el diagnóstico y el cristal. Armas la orden con la montura de tu vitrina, los cristales y tratamientos de tu lista de precios y el laboratorio, y la sigues paso a paso hasta el control de calidad y la entrega, sin entregar con saldo pendiente. Cobras abonos en dólares o en bolívares a la tasa del BCV, llevas tus monturas con su margen y existencia mínima, vendes lentes de sol y de contacto en el mostrador, y tus pacientes ven el estado de sus lentes, su fórmula y su saldo en su portal, reportan su pago y piden su cita en línea.',
+    color: ['#38bdf8', '#0369a1'],
+    url: 'https://sano-optica.web.app/',
+    video: 'https://sano-optica.web.app/tutorial/sano-optica-tutorial.mp4',
+    minutes: 6,
+    rubros: ['Óptica', 'Optometrista', 'Consultorio de optometría', 'Venta de lentes de sol', 'Lentes de contacto', 'Laboratorio óptico'],
+    keywords: 'optica opticas optometria optometrista oftalmologia lentes anteojos gafas lentes de sol lentes de contacto monturas armazones cristales micas progresivos bifocales antirreflejo fotocromatico blue filtro luz azul examen visual vista graduacion formula receta miopia astigmatismo presbicia laboratorio optico',
+    moneda: 'La moneda de tu país',
+    screens: [],
+    features: [
+      ['eye', 'Examen visual', 'Fórmula OD/OI validada y con QR.'],
+      ['glasses', 'Órdenes de lentes', 'Montura, cristales y tratamientos.'],
+      ['flask', 'Laboratorio y calidad', 'Fecha prometida y días reales.'],
+      ['cash', 'Abonos en $ y Bs', 'Saldo al retirar; tasa BCV.'],
+      ['box', 'Monturas', 'Marca, medidas, margen y existencia.'],
+      ['qr', 'Portal del paciente', 'Sus lentes paso a paso y su cita.']
+    ],
+    compare: { ventas: 'Órdenes y abonos', inventario: 'Monturas', agenda: true, whatsapp: true, qr: 'Fórmula y portal', especial: 'Examen y laboratorio' }
   }
 ];
 // Lo que incluyen todos los software Sano (sección "Todos incluyen")

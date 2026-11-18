@@ -1,6 +1,6 @@
 // SanoRepos — arma el sitio a partir de catalog.js
-import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261116b';
-import { startCosmos, startWaves } from './cosmos.js?v=20261116b';
+import { CATALOG, COMMON, COMPARE_COLS, WHATSAPP } from './catalog.js?v=20261118a';
+import { startCosmos, startWaves } from './cosmos.js?v=20261118a';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -65,6 +65,8 @@ const ICONS = {
   pill: '<rect x="2" y="8" width="20" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/>',
   qr: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M17 21h4v-4M14 18v3"/>',
   whatsapp: '<path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9 9.5c.4 2.3 2.2 4.1 4.5 4.5"/>',
+  eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  glasses: '<circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14a2 2 0 0 1 4 0M3 14 4.5 7.5M21 14l-1.5-6.5"/>',
   tooth: '<path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 3 6.5s2-4 4-4 2 4 4 4 2.5-3.5 3-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/>',
   layers: '<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>',
   activity: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
@@ -320,7 +322,7 @@ function renderBento() {
 function renderCompare() {
   const cell = (v) => v === true ? `<span class="yes" aria-label="Sí">${ico('check')}</span>` : v ? `<span class="txt">${esc(v)}</span>` : '<span class="no" aria-label="No">—</span>';
   $('#compare').innerHTML = `<thead><tr><th>Software</th>${COMPARE_COLS.map(([, l]) => `<th>${esc(l)}</th>`).join('')}<th>Moneda</th></tr></thead>
-    <tbody>${LIVE.map((it) => `<tr data-open="${it.id}"><th><img src="/assets/${it.id}/logo.svg" alt="">${esc(fullName(it))}</th>${COMPARE_COLS.map(([k]) => `<td>${cell(it.compare[k])}</td>`).join('')}<td><span class="txt">${esc(it.moneda)}</span></td></tr>`).join('')}</tbody>`;
+    <tbody>${LIVE.map((it) => `<tr data-open="${it.id}"><th><span class="sw"><img src="/assets/${it.id}/logo.svg" alt="">${esc(fullName(it))}</span></th>${COMPARE_COLS.map(([k]) => `<td>${cell(it.compare[k])}</td>`).join('')}<td><span class="txt">${esc(it.moneda)}</span></td></tr>`).join('')}</tbody>`;
 }
 
 // ---------- Ficha del software (#/id) ----------

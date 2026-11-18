@@ -333,8 +333,12 @@ main, footer { position: relative; z-index: 2; }
 .compare tbody tr { transition: background .2s; cursor: pointer; }
 .compare tbody tr:hover { background: var(--panel-2); }
 .compare tbody tr:last-child td, .compare tbody tr:last-child th { border-bottom: 0; }
-.compare tbody th { display: flex; align-items: center; gap: 12px; font: 600 1rem var(--head); white-space: nowrap; }
-.compare tbody th img { width: 34px; height: 34px; border-radius: 9px; }
+.compare tbody th { font: 600 1rem var(--head); white-space: nowrap; vertical-align: middle; min-width: 236px; }
+.compare tbody th .sw { display: flex; align-items: center; gap: 12px; }
+.compare td { vertical-align: middle; }
+.compare tbody tr { height: 80px; }
+.compare td:last-child .txt { white-space: nowrap; }
+.compare tbody th img { width: 34px; height: 34px; border-radius: 9px; flex: none; }
 .compare tbody th, .compare thead th:first-child { position: sticky; left: 0; z-index: 1; background: #0b0d1f; }
 .compare tbody tr:hover th { background: #131528; }
 .yes { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #34d39922; color: #34d399; }
@@ -480,4 +484,11 @@ main, footer { position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 640px) {
+  .compare th, .compare td { padding: 12px 12px; }
+  .compare tbody th { min-width: 0; font-size: .9rem; }
+  .compare tbody th .sw { gap: 9px; }
+  .compare tbody th img { width: 28px; height: 28px; border-radius: 8px; }
+  .compare tbody tr { height: 72px; }
 }
