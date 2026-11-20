@@ -389,7 +389,7 @@ export const CATALOG = [
   {
     id: 'sano-optica',
     name: ['Sano', 'Óptica'],
-    status: 'pronto',
+    status: 'disponible',
     category: 'Salud',
     tagline: 'Examen visual, órdenes de laboratorio, abonos, monturas y portal del paciente para ópticas.',
     description:
